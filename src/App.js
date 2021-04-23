@@ -1,17 +1,13 @@
-const labelText = 'First name';
-const style = {
-  backgroundColor: 'blue',
-  color: 'white'
-}
+import AppHeader from './components/AppHeader';
+import AppFooter from './components/AppFooter';
 
 const App = () =>  {
   return (
     <div>
-      <div>
-        <label htmlFor="name" className="label">{labelText}</label>
-        <input type="text" id="name"/>
-        <button style={style}>Submit</button>
-      </div>
+      <AppHeader />
+        <p>Naslov</p>
+        <p>Tekst</p>
+      <AppFooter />
     </div>
   );
 }

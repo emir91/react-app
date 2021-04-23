@@ -1,10 +1,29 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
-  background-color: lightgray;
+  background-color: white;
+  padding-top: 80px;
 }
 
-.label {
-  color: blue;
-  font-size: 18px;
+header,
+footer {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  text-align: center;
+  background-color: lightgray;
+  color: black;
+}
+
+header {
+  top: 0;
+  height: 74px;
+  border-bottom: 1px solid black;
+}
+
+footer {
+  bottom: 0;
+  height: 14px;
+  padding: 4px 0;
+  border-top: 1px solid black;
 }
