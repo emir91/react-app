@@ -3,6 +3,8 @@ body {
   font-size: 14px;
   background-color: white;
   padding-top: 80px;
+  margin: 0;
+  padding: 0;
 }
 
 header,
@@ -16,8 +18,11 @@ footer {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
   top: 0;
-  height: 74px;
+  height: 150px;
+  padding: 4px;
   border-bottom: 1px solid black;
 }
 

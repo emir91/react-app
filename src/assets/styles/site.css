@@ -1,0 +1,26 @@
+.left {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin-left: 1em;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+}
+
+.title {
+  margin-left: 0.5em;
+  font-size: 1.5em;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.navigator {
+  margin-right: 26px;
+  font-size: 1.5em;
+}
