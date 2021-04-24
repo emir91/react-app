@@ -1,5 +1,13 @@
+import Image from './Image';
+import Message from './Message';
+
 const Home = () => {
-    return <h1>Home</h1>
+    return (
+        <div className="container">
+            <Image />
+            <Message />
+        </div>
+    )
 }
 
 export default Home;

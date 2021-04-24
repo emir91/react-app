@@ -5,11 +5,6 @@
   margin-left: 1em;
 }
 
-.logo {
-  width: 120px;
-  height: 120px;
-}
-
 .title {
   margin-left: 0.5em;
   font-size: 1.5em;
@@ -23,4 +18,25 @@
 .navigator {
   margin-right: 26px;
   font-size: 1.5em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  padding: 12px;
+  text-align: center;
+}
+
+.homeLogo {
+  width: 400px;
+  margin-top: 5em;
+}
+
+.message {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 1em;
 }

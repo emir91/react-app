@@ -5,7 +5,7 @@ const AppHeader = () => {
     return (
         <header>
             <div className="left">
-                <img src={logo} alt="Paragon logo" className="logo"/>
+                <img src={logo} alt="Paragon logo"/>
                 <h2 className="title">My React App</h2>
             </div>
             <div className="right">
