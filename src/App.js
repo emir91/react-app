@@ -1,13 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
 import AppHeader from './components/AppHeader';
 import AppFooter from './components/AppFooter';
+import MainRouter from './MainRouter';
 
 const App = () =>  {
   return (
     <BrowserRouter>
       <AppHeader />
-        <p>Naslov</p>
-        <p>Tekst</p>
+      <MainRouter />
       <AppFooter />
     </BrowserRouter>
   );
