@@ -1,4 +1,17 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { list } from '../services/apiService';
+
 const Students = () => {
+    const [students, setStudents] = useState([]);
+
+    useEffect(() => {
+        list('students', data => {
+            console.log(data);
+            setStudents(data);
+        })
+    }, []);
+
     return (
         <div className="container">
             <h1>Students</h1>
@@ -8,24 +21,22 @@ const Students = () => {
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Year of Birth</th>
+                        <th><Link to='/students/new'>Add new</Link></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>First Name of the Student</td>
-                        <td>Last Name of the Student</td>
-                        <td>Birth Year of the Student</td>
-                    </tr>
-                     <tr>
-                        <td>First Name of the Student</td>
-                        <td>Last Name of the Student</td>
-                        <td>Birth Year of the Student</td>
-                    </tr>
-                    <tr>
-                        <td>First Name of the Student</td>
-                        <td>Last Name of the Student</td>
-                        <td>Birth Year of the Student</td>
-                    </tr>
+                    {students.map(student => {
+                    return(
+                        <tr key={student._id}>
+                            <td>{student.firstName}</td>
+                            <td>{student.lastName}</td>
+                            <td>{student.yearOfBirth}</td>
+                            <td>
+                                <Link to={`/students/${student._id}`}>Edit</Link>
+                            </td>
+                        </tr>
+                    );
+                })}
                 </tbody>
             </table>
         </div>

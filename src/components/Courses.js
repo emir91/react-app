@@ -1,4 +1,16 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import{ list } from '../services/apiService';
+
 const Courses = () => {
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        list('courses', data => {
+            setCourses(data);
+        })
+    }, []);
+    
     return (
         <div className="container">
             <h1>Courses</h1>
@@ -7,21 +19,21 @@ const Courses = () => {
                     <tr>
                         <th>Course name</th>
                         <th>Points</th>
+                        <th><Link to='/courses/new'>Add new</Link></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Name of the course</td>
-                        <td>Points for the course</td>
-                    </tr>
-                    <tr>
-                        <td>Name of the course</td>
-                        <td>Points for the course</td>
-                    </tr>
-                    <tr>
-                        <td>Name of the course</td>
-                        <td>Points for the course</td>
-                    </tr>
+                   {courses.map(course => {
+                    return(
+                        <tr key={course._id}>
+                            <td>{course.name}</td>
+                            <td>{course.points}</td>
+                            <td>
+                                <Link to={`/courses/${course._id}`}>Edit</Link>
+                            </td>
+                        </tr>
+                    );
+                })}
                 </tbody>
             </table>
         </div>
