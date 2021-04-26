@@ -20,7 +20,7 @@ const Students = () => {
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Year of Birth</th>
-                        <th><Link to='/students/new'>Add new</Link></th>
+                        <th><Link to='/students/0'>Add new</Link></th>
                     </tr>
                 </thead>
                 <tbody>
