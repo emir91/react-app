@@ -1,0 +1,29 @@
+.form-container {
+  border: 1px solid #006ba1;
+  border-radius: 5px;
+  padding: 2.5em;
+  background-color: #eaeaea;
+}
+
+.form-title {
+  font-size: 2.5em;
+  text-align: left;
+  margin-top: -0.5em;
+}
+
+.input-field {
+  margin: 1.5em 0;
+}
+
+.year-input {
+  margin-right: 1em;
+}
+
+.address-input {
+  margin-left: 2.5em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}

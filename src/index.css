@@ -29,10 +29,27 @@ header {
 footer {
   bottom: 0;
   height: 14px;
-  padding: 4px 0;
+  padding: 1em 0;
   border-top: 1px solid black;
 }
 
-h1 {
-  margin-top: 200px;
+input {
+  padding: 0.2em;
+  font-size: 1.3em;
+  margin-left: 1.5em;
+}
+
+label {
+  font-size: 1.5em;
+}
+
+button {
+  padding: 0.4em 0.9em;
+  margin-right: 0.3em;
+  letter-spacing: 1pt;
+  background-color: #005a87;
+  border-radius: 5px;
+  color: #f4c700;
+  font-weight: bold;
+  cursor: pointer;
 }

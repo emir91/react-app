@@ -49,54 +49,58 @@ const Student = ({match, history}) => {
 
     return (
         <div className="container">
-            <h2>Student</h2>
-            <form className="form-input">
-                <div className="input-field">
-                    <label htmlFor="firstName">First Name:</label>
-                    <input 
+            <div className="form-container">
+                <h2 className="form-title">Student</h2>
+                <form className="form-input">
+                    <div className="input-field">
+                        <label htmlFor="firstName">First Name:</label>
+                        <input 
                         type="text" 
                         name="firstName" 
                         value={student.firstName}
                         onChange={changeHandler}/>
-                </div>
-                 <div className="input-field">
-                    <label htmlFor="lastName">Last Name:</label>
-                    <input 
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="lastName">Last Name:</label>
+                        <input 
                         type="text" 
                         name="lastName" 
                         value={student.lastName}
                         onChange={changeHandler}/>
-                </div>
-                 <div className="input-field">
-                    <label htmlFor="yearOfBirth">Year of Birth:</label>
-                    <input 
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="yearOfBirth">Year of Birth:</label>
+                        <input 
+                        className="year-input"
                         type="text" 
                         name="yearOfBirth" 
                         value={student.yearOfBirth}
                         onChange={changeHandler}/>
-                </div>
-                 <div className="input-field">
-                    <label htmlFor="address">Address:</label>
-                    <input 
+                    </div>
+                    <div className="input-field address-field">
+                        <label htmlFor="address">Address:</label>
+                        <input 
+                        className="address-input"
                         type="text" 
                         name="address" 
                         value={student.address}
                         onChange={changeHandler}/>
-                </div>
-                <hr/>
-                <div className="button-container">
+                    </div>
+                    <hr/>
+                    <div className="button-container">
                     <div className="left">
-                        <button type="button" onClick={removeStudent}>DELETE</button>
+                      {id !== '0' && (<button type="button" onClick={removeStudent}>DELETE</button>)}
+                        </div>
+                    
+                        <div className="right">
+                            <button type="button" onClick={() => history.push('/students')}>BACK</button>
+                            <button type="button" onClick={save}>SAVE</button>
+                        </div>
                     </div>
-                    <div className="right">
-                        <button type="button" onClick={() => history.push('/students')}>BACK</button>
-                        <button type="button" onClick={save}>SAVE</button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     )
 }
 
 export default Student;
-

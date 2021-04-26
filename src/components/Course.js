@@ -52,31 +52,38 @@ const Course = ({ match, history }) => {
 
     return (
         <div className="container">
-            <h2>Course</h2>
-            <form className="input-form">
-                <div className="input-field">
-                    <label htmlFor="name">Course name:</label>
-                    <input 
+            <div className="form-container">
+                <h2 className="form-title">Course</h2>
+                <form className="input-form">
+                    <div className="input-field">
+                        <label htmlFor="name">Course name:</label>
+                        <input 
                         type="text" 
                         name="name" 
                         value={course.name}
                         onChange={changeHandler}/>
-                </div>
-                <div className="input-field">
-                    <label htmlFor="points">Course points:</label>
-                    <input 
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="points">Course points:</label>
+                        <input 
                         type="text" 
                         name="points" 
                         value={course.points}
                         onChange={changeHandler}/>
-                </div>
-                <hr/>
-                <div className="button-container">
-                   {id !== '0' && (<button type="button" onClick={removeCourse}>DELETE</button>)} 
-                    <button type="button" onClick={back}>BACK</button>
-                    <button type="button" onClick={save}>SAVE</button>
-                </div>
-            </form>
+                    </div>
+                    <hr/>
+                    <div className="button-container">
+                        <div className="left">
+                       {id !== '0' && (<button type="button" onClick={removeCourse}>DELETE</button>)}
+                        </div>
+                    
+                        <div className="right">
+                            <button type="button" onClick={back}>BACK</button>
+                            <button type="button" onClick={save}>SAVE</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }
