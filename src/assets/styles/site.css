@@ -40,3 +40,12 @@
   font-weight: bold;
   margin-top: 1em;
 }
+
+.input-field {
+  margin: 12px 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}

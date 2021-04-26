@@ -7,7 +7,6 @@ const Students = () => {
 
     useEffect(() => {
         list('students', data => {
-            console.log(data);
             setStudents(data);
         })
     }, []);
