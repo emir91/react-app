@@ -13,11 +13,11 @@ To run this application locally:
 3. npm install
 4. npm start
 
-Beside this gitHub repo, to run the application, you also must run mongoServer. Instructions for running mongoServer locally you can find on this link (https://github.com/emir91/mongoServer).
+Beside this gitHub repo, to run the application, you also must run mongoServer. Instructions for running mongoServer locally can be found on this link (https://github.com/emir91/mongoServer).
 
 ## Libraries, npm packages and third party-party plug-ins:
 
-- axios": "^0.21.1
+- axios
 
 ## Available Scripts
 
