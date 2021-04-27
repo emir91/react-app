@@ -22,7 +22,7 @@ const Course = ({ match, history }) => {
     }, [id]);
 
     function changeHandler(e) {
-        if(e.target.value && e.target.name === "name"){
+       if(e.target.value && e.target.name === "name"){
             setIsNameEmpty(false);
         }
         if(e.target.value && e.target.name === "points"){
@@ -38,8 +38,7 @@ const Course = ({ match, history }) => {
         history.push('/courses');
     }
 
-    const save = e => {
-       e.preventDefault();
+    const save = () => {
        if(id === '0') {
           if(!course.name) {
               setIsNameEmpty(true);
@@ -47,7 +46,7 @@ const Course = ({ match, history }) => {
           if(!course.points) {
               setIsPointsEmpty(true);
               return;
-          }
+          } 
           insert('courses', course, data => {
               if(data) return history.push('/courses');
               console.log('There was an error during save data');
@@ -66,7 +65,7 @@ const Course = ({ match, history }) => {
           if(!course.points) {
               setIsPointsEmpty(true);
               return;
-          }
+          } 
             update('courses', id, course, data => {
                if(data) return history.push('/courses');
                console.log('There was an error during save data');
@@ -113,7 +112,7 @@ const Course = ({ match, history }) => {
                     
                         <div className="right">
                             <button type="button" onClick={back}>BACK</button>
-                            <button type="submit" onClick={save}>SAVE</button>
+                            <button type="button" onClick={save}>SAVE</button>
                         </div>
                     </div>
                 </form>

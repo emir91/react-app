@@ -97,7 +97,8 @@ const Student = ({match, history}) => {
                         type="text" 
                         name="lastName" 
                         value={student.lastName}
-                        onChange={changeHandler}/>
+                        onChange={changeHandler}
+                        required/>
                         {isLastNameEmpty && <p className="error">This field is required</p>}
                     </div>
                     <div className="input-field">
@@ -107,7 +108,8 @@ const Student = ({match, history}) => {
                         type="text" 
                         name="yearOfBirth" 
                         value={student.yearOfBirth}
-                        onChange={changeHandler}/>
+                        onChange={changeHandler}
+                        required/>
                     </div>
                     <div className="input-field address-field">
                         <label htmlFor="address">Address:</label>
