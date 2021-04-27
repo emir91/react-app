@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This is simple CRUD application done in React(front-end) and NodeJS and MongoDB(back-end).
+
+## Run application
+
+To run this application locally:
+
+1. git clone https://
+2. cd react-app
+3. npm install
+4. npm start
+
+Beside this gitHub repo, to run the application, you also must run mongoServer. Instructions for running mongoServer locally you can find on this link (https://github.com/emir91/mongoServer).
+
+## Libraries, npm packages and third party-party plug-ins:
+
+- axios": "^0.21.1
 
 ## Available Scripts
 
