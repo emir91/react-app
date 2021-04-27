@@ -11,6 +11,8 @@ const Student = ({match, history}) => {
         yearOfBirth: 0,
         address: ''
     });
+    const [isFirstNameEmpty, setIsFirstNameEmpty] = useState(false);
+    const [isLastNameEmpty, setIsLastNameEmpty] = useState(false);
 
     useEffect(() => {
         if(id !== '0') {
@@ -21,19 +23,47 @@ const Student = ({match, history}) => {
     }, [id])
 
     function changeHandler(e) {
+         if(e.target.value && e.target.name === "firstName"){
+            setIsFirstNameEmpty(false);
+        }
+        if(e.target.value && e.target.name === "lastName"){
+            setIsLastNameEmpty(false);
+        }
         setStudent({
             ...student,
             [e.target.name]: e.target.value
         });
     }
 
+    const back = () => history.push('/students');
+
     const save = () => {
         if(id === '0') {
+            if(!student.firstName) {
+              setIsFirstNameEmpty(true);
+            } 
+            if(!student.lastName) {
+              setIsLastNameEmpty(true);
+              return;
+            }
             insert('students', student, data => {
                 if(data) return history.push('/students');
                 console.log("There was an error during save data");
             });
         } else {
+            if(!student.firstName && !student.lastName){
+                setIsFirstNameEmpty(true)
+                setIsLastNameEmpty(true);
+                return;
+            }
+            if(!student.firstName) {
+              setIsFirstNameEmpty(true);
+              return;
+            } 
+            if(!student.lastName) {
+              setIsLastNameEmpty(true);
+              return;
+            }
             update('students', id, student, data => {
                 if(data) return history.push('/students');
                 console.log("There was an error during save data");
@@ -59,6 +89,7 @@ const Student = ({match, history}) => {
                         name="firstName" 
                         value={student.firstName}
                         onChange={changeHandler}/>
+                        {isFirstNameEmpty && <p className="error">This field is required</p>}
                     </div>
                     <div className="input-field">
                         <label htmlFor="lastName">Last Name:</label>
@@ -67,6 +98,7 @@ const Student = ({match, history}) => {
                         name="lastName" 
                         value={student.lastName}
                         onChange={changeHandler}/>
+                        {isLastNameEmpty && <p className="error">This field is required</p>}
                     </div>
                     <div className="input-field">
                         <label htmlFor="yearOfBirth">Year of Birth:</label>
@@ -93,7 +125,7 @@ const Student = ({match, history}) => {
                         </div>
                     
                         <div className="right">
-                            <button type="button" onClick={() => history.push('/students')}>BACK</button>
+                            <button type="button" onClick={back}>BACK</button>
                             <button type="button" onClick={save}>SAVE</button>
                         </div>
                     </div>
