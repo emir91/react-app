@@ -40,3 +40,8 @@
   font-weight: bold;
   margin-top: 1em;
 }
+
+.error {
+  color: #fc2003;
+  letter-spacing: 0.3pt;
+}

@@ -8,7 +8,7 @@ table {
 table th {
   background-color: #369;
   color: #fff;
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 
 table tr {
@@ -18,7 +18,7 @@ table tr {
 }
 
 table tr:nth-child(2n + 1) {
-  background-color: fafafa;
+  background-color: #fafafa;
 }
 
 table td {
