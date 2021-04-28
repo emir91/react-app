@@ -39,8 +39,14 @@ const Student = ({match, history}) => {
 
     const save = () => {
         if(id === '0') {
+            if(!student.firstName && !student.lastName){
+                setIsFirstNameEmpty(true)
+                setIsLastNameEmpty(true);
+                return;
+            }
             if(!student.firstName) {
               setIsFirstNameEmpty(true);
+              return;
             } 
             if(!student.lastName) {
               setIsLastNameEmpty(true);

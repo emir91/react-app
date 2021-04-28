@@ -40,8 +40,15 @@ const Course = ({ match, history }) => {
 
     const save = () => {
        if(id === '0') {
+           if(!course.name && !course.points) {
+              setIsNameEmpty(true);
+              setIsPointsEmpty(true);
+              return;
+
+          }
           if(!course.name) {
               setIsNameEmpty(true);
+              return;
           } 
           if(!course.points) {
               setIsPointsEmpty(true);
